@@ -1,0 +1,721 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Fredoka+One:wght@400&display=swap');
+
+body {
+  font-family: 'Kalam', cursive;
+  margin: 0;
+  padding: 20px;
+  min-height: 100vh;
+  color: white;
+  transition: background 0.8s ease;
+  overflow-x: hidden;
+}
+
+/* Bubble animation overlay */
+.bubble-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.bubble {
+  position: absolute;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(173,216,230,0.6));
+  border-radius: 50%;
+  animation: bubbleFloat 1.5s ease-out forwards;
+  box-shadow: 0 0 20px rgba(255,255,255,0.3), inset -5px -5px 20px rgba(255,255,255,0.2);
+}
+
+@keyframes bubbleFloat {
+  0% {
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-20vh) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Background classes for different sections */
+.bg-home {
+  background-image: url('/assets/pattern5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-movies {
+  background-image: url('/assets/pattern1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-drawings {
+  background-image: url('/assets/pattern2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-resume {
+  background-image: url('/assets/pattern3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.bg-music {
+  background-image: url('/assets/pattern4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Add an overlay to ensure text readability */
+.bg-home::before,
+.bg-movies::before,
+.bg-drawings::before,
+.bg-resume::before,
+.bg-music::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* HOME SECTION */
+.home-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 52px;
+  margin-bottom: 10px;
+  font-weight: 400;
+  text-shadow: 4px 4px 0px #2c3e50, 6px 6px 0px rgba(0,0,0,0.3);
+  color: #f39c12;
+  transform: rotate(-2deg);
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-size: 22px;
+  margin-bottom: 60px;
+  font-style: italic;
+  opacity: 0.95;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  font-weight: 700;
+  transform: rotate(1deg);
+  color: #ecf0f1;
+}
+
+/* New layout for home page */
+.home-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  gap: 80px;
+  margin-top: 40px;
+}
+
+.nav-column-left {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+}
+
+.nav-column-right {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+}
+
+.profile-container {
+  position: relative;
+  transform: rotate(-1deg);
+}
+
+.profile-image {
+  width: 350px;
+  height: 450px;
+  background-color: #2c3e50;
+  border-radius: 25px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.2);
+  transition: all 0.4s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #bdc3c7;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  transform: rotate(1deg);
+}
+
+.profile-image:hover {
+  transform: rotate(-1deg) scale(1.05);
+}
+
+.nav-icon {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: white;
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.4), inset -2px -2px 10px rgba(0,0,0,0.2);
+  transform: rotate(-2deg);
+  font-weight: 700;
+}
+
+.nav-icon:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.nav-icon:nth-child(3) {
+  transform: rotate(2deg);
+}
+
+.nav-icon:nth-child(4) {
+  transform: rotate(-1deg);
+}
+
+.nav-icon:hover {
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  transform: rotate(0deg) translateY(-8px) scale(1.1);
+  box-shadow: 8px 8px 20px rgba(0,0,0,0.5), inset 2px 2px 10px rgba(255,255,255,0.1);
+}
+
+.nav-icon-symbol {
+  font-size: 48px;
+  margin-bottom: 8px;
+  filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+}
+
+.nav-icon-text {
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* SECTION STYLES */
+.content-section {
+  padding: 40px 0;
+  animation: bubbleIn 1s ease;
+}
+
+.content-section.active {
+  display: block;
+}
+
+@keyframes bubbleIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(50px) scale(0.8);
+  }
+  50% { 
+    opacity: 0.7; 
+    transform: translateY(-10px) scale(1.05);
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+  transform: rotate(-1deg);
+}
+
+.section-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 42px;
+  margin-bottom: 15px;
+  font-weight: 400;
+  text-shadow: 4px 4px 0px #2c3e50, 6px 6px 0px rgba(0,0,0,0.3);
+  color: #f39c12;
+  letter-spacing: 1px;
+}
+
+.section-header p {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  font-size: 18px;
+  font-weight: 700;
+  color: #ecf0f1;
+}
+
+.back-button {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  border: 4px solid #f39c12;
+  border-radius: 50px;
+  padding: 15px 28px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000;
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.4);
+  transform: rotate(-2deg);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  font-family: 'Kalam', cursive;
+}
+
+.back-button:hover {
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  transform: rotate(0deg) translateX(-8px) scale(1.1);
+  box-shadow: 6px 6px 15px rgba(0,0,0,0.5);
+}
+
+/* MOVIES SECTION */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.movie-card {
+  background: linear-gradient(145deg, rgba(52, 152, 219, 0.3), rgba(41, 128, 185, 0.3));
+  border: 3px solid #f39c12;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.4s ease;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
+  transform: rotate(-1deg);
+}
+
+.movie-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.movie-card:hover {
+  transform: rotate(0deg) translateY(-12px) scale(1.05);
+  box-shadow: 8px 8px 25px rgba(0,0,0,0.5);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 375px; /* 2:3 aspect ratio for realistic movie poster proportions */
+  background-color: rgba(44, 62, 80, 0.9);
+  border: 3px solid #e74c3c;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bdc3c7;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+}
+
+.movie-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  color: #f39c12;
+}
+
+.movie-year {
+  font-size: 16px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  font-weight: 700;
+  color: #ecf0f1;
+}
+
+/* DRAWINGS SECTION */
+.drawings-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 35px;
+  margin-top: 30px;
+}
+
+.drawing-card {
+  background: linear-gradient(145deg, rgba(155, 89, 182, 0.3), rgba(142, 68, 173, 0.3));
+  border: 3px solid #f39c12;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: transform 0.4s ease;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
+  transform: rotate(1deg);
+}
+
+.drawing-card:nth-child(even) {
+  transform: rotate(-1deg);
+}
+
+.drawing-card:hover {
+  transform: rotate(0deg) scale(1.08);
+  box-shadow: 8px 8px 25px rgba(0,0,0,0.5);
+}
+
+.drawing-placeholder {
+  width: 100%;
+  height: 250px;
+  background-color: rgba(44, 62, 80, 0.9);
+  border: 3px solid #9b59b6;
+  border-radius: 15px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bdc3c7;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+}
+
+.drawing-title {
+  font-size: 18px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  color: #f39c12;
+}
+
+/* RESUME SECTION */
+.resume-content {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, rgba(39, 174, 96, 0.3), rgba(46, 204, 113, 0.3));
+  border: 4px solid #f39c12;
+  border-radius: 25px;
+  padding: 45px;
+  box-shadow: 8px 8px 25px rgba(0,0,0,0.4);
+  transform: rotate(-0.5deg);
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #f39c12;
+}
+
+.resume-name {
+  font-family: 'Fredoka One', cursive;
+  font-size: 36px;
+  color: #f39c12;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.resume-contact {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-weight: 700;
+  color: #ecf0f1;
+}
+
+.resume-contact span {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.resume-section {
+  margin-bottom: 35px;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  border: 2px solid rgba(243, 156, 18, 0.5);
+}
+
+.resume-section h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 24px;
+  margin-bottom: 18px;
+  border-bottom: 3px solid #f39c12;
+  padding-bottom: 12px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  color: #f39c12;
+  transform: rotate(-1deg);
+}
+
+.resume-section p, .resume-section ul {
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  font-weight: 700;
+  color: #ecf0f1;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.resume-section ul {
+  padding-left: 20px;
+}
+
+.resume-section li {
+  margin-bottom: 8px;
+}
+
+.job-title {
+  color: #f39c12;
+  font-weight: 700;
+}
+
+.company-info {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+/* MUSIC SECTION */
+.music-list {
+  max-width: 900px;
+  margin: 30px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.album-item {
+  background: linear-gradient(145deg, rgba(26, 188, 156, 0.3), rgba(22, 160, 133, 0.3));
+  border: 3px solid #f39c12;
+  border-radius: 20px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  transition: all 0.4s ease;
+  box-shadow: 6px 6px 20px rgba(0,0,0,0.4);
+  transform: rotate(-0.5deg);
+  position: relative;
+}
+
+.album-item:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+.album-item:hover {
+  transform: rotate(0deg) translateY(-8px) scale(1.02);
+  box-shadow: 8px 8px 25px rgba(0,0,0,0.5);
+  border-color: #f1c40f;
+}
+
+.album-number {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  background: linear-gradient(145deg, #e74c3c, #c0392b);
+  border: 3px solid #f39c12;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fredoka One', cursive;
+  font-size: 18px;
+  font-weight: 700;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  box-shadow: 4px 4px 12px rgba(0,0,0,0.4);
+}
+
+.album-cover {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(44, 62, 80, 0.9);
+  border: 3px solid #1abc9c;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bdc3c7;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+  transform: rotate(-2deg);
+}
+
+.album-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.album-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 24px;
+  font-weight: 400;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  color: #f39c12;
+  transform: rotate(-1deg);
+}
+
+.album-artist {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+  color: #ecf0f1;
+  opacity: 0.95;
+}
+
+.album-details {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.album-genre {
+  font-size: 16px;
+  font-weight: 700;
+  color: #3498db;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.album-year {
+  font-size: 15px;
+  font-weight: 700;
+  color: #95a5a6;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.favorite-track {
+  font-size: 15px;
+  font-weight: 700;
+  color: #e67e22;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.favorite-track span {
+  color: #f39c12;
+}
+
+.album-rating {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.3);
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 2px solid rgba(243, 156, 18, 0.5);
+}
+
+.rating-star {
+  color: #f1c40f;
+  font-size: 18px;
+  filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.5));
+}
+
+.rating-number {
+  font-family: 'Fredoka One', cursive;
+  font-size: 16px;
+  font-weight: 700;
+  color: #ecf0f1;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+/* Responsive design for music section */
+@media (max-width: 768px) {
+  .album-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .album-cover {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .album-rating {
+    position: static;
+    align-self: center;
+    margin-top: 10px;
+  }
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .home-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .nav-column-left, .nav-column-right {
+    flex-direction: row;
+    gap: 40px;
+  }
+  
+  .profile-image {
+    width: 300px;
+    height: 400px;
+  }
+  
+  .nav-icon {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-column-left, .nav-column-right {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .resume-contact {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
