@@ -313,7 +313,7 @@ function App() {
             genre: "Indie Rock, Madchester",
             year: "1989",
             favoriteTrack: "I Wanna Be Adored",
-            rating: "4.9",
+            rating: "4.8",
             cover: "/assets/album-covers/stone-roses.jpg"
           },
           { 
@@ -321,7 +321,7 @@ function App() {
             artist: "Slowdive",
             genre: "Shoegaze, Dream Pop",
             year: "1993",
-            favoriteTrack: "Alison",
+            favoriteTrack: "When the Sun Hits",
             rating: "4.8",
             cover: "/assets/album-covers/souvlaki.jpg"
           },
@@ -330,8 +330,8 @@ function App() {
             artist: "Bruce Springsteen",
             genre: "Rock, Heartland Rock",
             year: "1975",
-            favoriteTrack: "Thunder Road",
-            rating: "4.7",
+            favoriteTrack: "Jungleland",
+            rating: "4.8",
             cover: "/assets/album-covers/born-to-run.jpg"
           },
           { 
@@ -339,8 +339,8 @@ function App() {
             artist: "The Beatles",
             genre: "Rock, Pop",
             year: "1969",
-            favoriteTrack: "Come Together",
-            rating: "4.9",
+            favoriteTrack: "Here Comes the Sun",
+            rating: "4.7",
             cover: "/assets/album-covers/abbey-road.jpg"
           },
           { 
@@ -349,7 +349,7 @@ function App() {
             genre: "Rock, Pop Rock",
             year: "1977",
             favoriteTrack: "Dreams",
-            rating: "4.8",
+            rating: "4.7",
             cover: "/assets/album-covers/rumours.jpg"
           },
           { 
@@ -357,7 +357,7 @@ function App() {
             artist: "Pixies",
             genre: "Alternative Rock",
             year: "1989",
-            favoriteTrack: "Debaser",
+            favoriteTrack: "Monkey Gone to Heaven",
             rating: "4.6",
             cover: "/assets/album-covers/doolittle.jpg"
           }
