@@ -38,9 +38,6 @@ I wanted to create a portfolio that goes beyond the typical developer showcase. 
 ## Contact
 
 - **Email**: jmr338@pitt.edu
-- **LinkedIn**: [linkedin.com/in/justin-rhodes](https://linkedin.com/in/justin-rhodes)
+- **LinkedIn**: [linkedin.com/in/justin-rhodes-](https://linkedin.com/in/justin-rhodes-)
 - **Portfolio**: [justinrhodes.me](https://justinrhodes.me)
 
-## License
-
-This project is open source and available under the MIT License.
